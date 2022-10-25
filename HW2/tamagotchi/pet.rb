@@ -31,7 +31,6 @@ class Pet
   def feed
     @food = 5
     p 'nomnomnom'
-
     passage_of_time
   end
 
@@ -39,7 +38,6 @@ class Pet
   def drunk
     @water = 5
     p 'sip sip sip'
-
     passage_of_time
   end
 
@@ -52,7 +50,6 @@ class Pet
     @sleep  = true
     @life  -= 1
     p '*guf* Runs down the *guuff* street and barks at people *puFf*'
-
     passage_of_time
   end
 
@@ -62,7 +59,6 @@ class Pet
     @energy -= 2
     p 'Veterinarian:',
       'everything is fine, he is healthy!'
-
     passage_of_time
   end
 
@@ -73,7 +69,6 @@ class Pet
     @energy = 5
     @sleep  = false
     p 'zzz.z...zzz.z.zz.z..z'
-
     passage_of_time
   end
 
@@ -81,7 +76,6 @@ class Pet
   def wash
     @mood = 'happy'
     p '*Swimming in foam and bubbles*'
-
     passage_of_time
   end
 
@@ -91,7 +85,6 @@ class Pet
     @sleep = true
     p 'watching a movie *gaff*',
       'worries about the actors'
-
     passage_of_time
   end
 
@@ -102,7 +95,6 @@ class Pet
     p 'puff...guff...',
       '...pufff...',
       '*KNOK* broken vase'
-
     passage_of_time
   end
 
@@ -121,7 +113,6 @@ class Pet
     @energy -= 1
     @mood    = 'happy'
     p 'the ball flies all over the house'
-
     passage_of_time
   end
 
@@ -130,7 +121,6 @@ class Pet
     @mood   = 'awesome'
     @stroll = true
     p 'gaff uuu ffuf'
-
     passage_of_time
   end
 
@@ -141,12 +131,12 @@ class Pet
     num    = rand(1...3)
     @water = num
     @food  = num
-
     check
   end
 
   def check
     p 'Whine in pain *gaff*' if @life <= 2
+    p '*Press "Enter(return)" to see the list of commands*'
   end
 end
 
