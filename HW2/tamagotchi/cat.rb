@@ -1,26 +1,9 @@
 require_relative 'pet'
 
 class Cat < Pet
-  attr_reader :life
-
   def initialize(name)
-    @pet  = 'cat'
-    @life = 3
+    @pet = 'cat'
     super
-  end
-
-  def info
-    puts 'Pet information: ',
-         "  Pet:                      #{@pet}",
-         "  Name:                     #{@name}",
-         "  Life:                     #{@life}",
-         "  Mood:                     #{@mood}",
-         "  Food:                     #{@food}",
-         "  Water:                    #{@water}",
-         "  Energy:                   #{@energy}",
-         "  Wants to go to bed:       #{@sleep}",
-         "  Wants to go for a walk:   #{@stroll} \n\n"
-    check
   end
 
   # Walk your pet

@@ -18,8 +18,8 @@ class Pet
   def info
     puts 'Pet information: ',
          "  Pet:                      #{@pet}",
-         "  Name:                     #{@name}",
-         "  Life:                     #{@life}",
+         "  Name:                     #{name}",
+         "  Life:                     #{life}",
          "  Mood:                     #{@mood}",
          "  Food:                     #{@food}",
          "  Water:                    #{@water}",
