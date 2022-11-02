@@ -1,16 +1,22 @@
 # Tamagotchi
 ## _Play with your pet_
-
+1. `gh repo clone EugeneShitov/RubyHW`
+2. `bundle install`
+3. `ruby ui.rb`
 #### You can do:
--  See information about your pet
--  Feed your pet
--  Get your pet drunk
--  Walk your pet
--  Taking your pet to the vet
--  Put your pet to sleep
--  Wash your pet
--  Watch a movie with your pet
--  (get out your home) The pet is mischievous while you are not around
--  Punish the pet
--  Play ball with your pet
--  Scratch your pet
+
+1. Choose a pet (dog or cat)
+2. [ - ] See information about your pet
+3. [ 1 ] Feed your pet
+4. [ 2 ] Get your pet drunk
+5. [ 3 ] Walk your pet
+6. [ 4 ] Taking your pet to the vet
+7. [ 5 ] Put your pet to sleep
+8. [ 6 ] Wash your pet
+9. [ 7 ] Watch a movie with your pet
+10. [ 8 ] The pet is mischievous while you are not around (get out your home)
+11. [ 9 ] Punish the pet
+12. [ 0 ] Play ball with your pet
+13. [ / ] Scratch your pet
+14. [ B ] Open in Browser
+15. [ Q ] Close game
