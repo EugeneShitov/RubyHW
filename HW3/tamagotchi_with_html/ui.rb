@@ -1,20 +1,21 @@
 require_relative 'pet'
 require_relative 'dog'
 require_relative 'cat'
+require 'lunox'
 
 puts 'Please, enter you`r pet`s name?'
-name = gets.chomp
+name = gets.chomp.capitalize
 puts 'Choose cat or dog, please'
-type = gets.chomp.downcase
+type = gets.chomp.capitalize
 case type
-when 'dog'
+when 'Dog'
   pet = Dog.new(name)
-when 'cat'
+when 'Cat'
   pet = Cat.new(name)
 else
   puts 'Don`t know this pet'
 end
-puts "Hi i'm your #{type}. My name is #{pet.name}. And I love u :*"
+puts "Hi i'm your #{type.downcase}. My name is #{pet.name}. And I love u :*"
 
 while pet.life != 0
   puts 'Select an action: ',
@@ -30,6 +31,7 @@ while pet.life != 0
        '  9  -  Punish the pet',
        '  0  -  Play ball with your pet',
        "  /  -  Scratch your pet \n\n",
+       '  B  -  Open in Browser',
        "  Q  -  Close game \n\n".upcase
 
   command = gets.chomp.upcase
@@ -63,7 +65,7 @@ while pet.life != 0
     when 'Q'
       exit
     when 'B'
-      CreateHTML.open_in_browser
+      system('open ./index.html')
     else
       puts 'Select 0 - 9, -, /, Q!'
     end

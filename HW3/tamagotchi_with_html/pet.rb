@@ -1,16 +1,13 @@
 require 'lunox'
-require 'bundler'
-Bundler.require
 
 class Pet
   attr_accessor :name
   attr_reader :life
 
   def initialize(name)
-    @pet    = ''
     @name   = name
     @mood   = 'awesome'
-    @life   = 3
+    @life   = 5
     @food   = 5
     @water  = 5
     @energy = 5
@@ -128,20 +125,28 @@ class Pet
     @water = num
     @food  = num
     check
-    CreateHTML.create_html(info_html, true, 'index.html')
+    Lunox.save(info_html, bypass_html: true)
+    if life >= 4
+      @life_unicode_status = '&#10084;'
+    elsif life < 4 && life != 0
+      @life_unicode_status = '&#128148;'
+    else
+      @life_unicode_status = '&#9760;'
+    end
   end
 
   def info_html
     <<~HTML
-      <p style="color:darkred; text-align: center; font-size: 32px; font-family: monospace">Pet:                      @pet</p>
-      <p style="color:darkred; text-align: center; font-size: 32px; font-family: monospace">Name:                     name</p>
-      <p style="color:darkred; text-align: center; font-size: 32px; font-family: monospace">Life:                     life</p>
-      <p style="color:darkred; text-align: center; font-size: 32px; font-family: monospace">Mood:                     @mood</p>
-      <p style="color:darkred; text-align: center; font-size: 32px; font-family: monospace">Food:                     @food</p>
-      <p style="color:darkred; text-align: center; font-size: 32px; font-family: monospace">Water:                    @water</p>
-      <p style="color:darkred; text-align: center; font-size: 32px; font-family: monospace">Energy:                   @energy</p>
-      <p style="color:darkred; text-align: center; font-size: 32px; font-family: monospace">Wants to go to bed:       @sleep</p>
-      <p style="color:darkred; text-align: center; font-size: 32px; font-family: monospace">Wants to go for a walk:   @stroll</p>
+      <p style="color:#5499C7; text-align: center; font-size: 32px; font-family: Menlo, serif">Pet:                      #{@pet}</p>
+      <p style="color:#5499C7; text-align: center; font-size: 32px; font-family: Menlo, serif">Name:                     #{name}</p>
+      <p style="color:#5499C7; text-align: center; font-size: 32px; font-family: Menlo, serif">Life:                     #{life}</p>
+      <p style="color:#5499C7; text-align: center; font-size: 32px; font-family: Menlo, serif">Mood:                     #{@mood}</p>
+      <p style="color:#5499C7; text-align: center; font-size: 32px; font-family: Menlo, serif">Food:                     #{@food}</p>
+      <p style="color:#5499C7; text-align: center; font-size: 32px; font-family: Menlo, serif">Water:                    #{@water}</p>
+      <p style="color:#5499C7; text-align: center; font-size: 32px; font-family: Menlo, serif">Energy:                   #{@energy}</p>
+      <p style="color:#5499C7; text-align: center; font-size: 32px; font-family: Menlo, serif">Wants to go to bed:       #{@sleep}</p>
+      <p style="color:#5499C7; text-align: center; font-size: 32px; font-family: Menlo, serif">Wants to go for a walk:   #{@stroll}</p>
+      <p style="text-align: center; font-size: 64px">#{@life_unicode_status}</p>
     HTML
   end
 end
