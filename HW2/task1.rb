@@ -54,7 +54,9 @@ p arr1.map { |i| arr2[i - 1] }
 p '– поменять местами минимальный и максимальный элементы массивa'
 p arr
 arr_temp = arr.clone
-arr_temp[arr_temp.each_with_index.min[1]], arr_temp[arr_temp.each_with_index.max[1]] = arr_temp[arr_temp.each_with_index.max[1]], arr_temp[arr_temp.each_with_index.min[1]]
+min_el = arr.index(arr.min)
+max_el = arr.index(arr.max)
+arr_temp[min_el], arr_temp[max_el] = arr_temp[max_el], arr_temp[min_el]
 p arr_temp
 
 p '– найти элементы, которые находятся перед минимальным числом в массиве'
