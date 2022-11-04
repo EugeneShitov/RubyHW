@@ -1,3 +1,4 @@
 source 'https://rubygems.org'
 
-gem 'lunox', '~> 1.0.0'
+gem 'lunox',    '~> 1.0.0'
+gem 'sanitize', '~> 4.0', '>= 4.0.1'

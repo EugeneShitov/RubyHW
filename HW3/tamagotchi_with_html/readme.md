@@ -1,8 +1,9 @@
 # Tamagotchi
 ## _Play with your pet_
-1. `gh repo clone EugeneShitov/RubyHW`
-2. `bundle install`
-3. `ruby ui.rb`
+1. `git clone https://github.com/EugeneShitov/RubyHW/tree/master/HW3/tamagotchi_with_html`
+2. `gem install bundler`
+3. `bundle install`
+4. `ruby ui.rb`
 #### You can do:
 
 1. Choose a pet (dog or cat)
