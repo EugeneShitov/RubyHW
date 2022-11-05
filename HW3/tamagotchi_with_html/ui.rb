@@ -7,14 +7,16 @@ puts 'Please, enter you`r pet`s name?'
 name = gets.chomp.capitalize
 puts 'Choose cat or dog, please'
 type = gets.chomp.capitalize
+
 case type
 when 'Dog'
   pet = Dog.new(name)
 when 'Cat'
   pet = Cat.new(name)
 else
-  puts 'Don`t know this pet'
+  exit
 end
+
 puts "Hi i'm your #{type.downcase}. My name is #{pet.name}. And I love u :*"
 
 while pet.life != 0

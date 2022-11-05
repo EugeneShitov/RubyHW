@@ -126,13 +126,11 @@ class Pet
     @food  = num
     check
     Lunox.save(info_html, bypass_html: true)
-    if life >= 4
-      @life_unicode_status = '&#10084;'
-    elsif life < 4 && life != 0
-      @life_unicode_status = '&#128148;'
-    else
-      @life_unicode_status = '&#9760;'
-    end
+    @life_unicode_status = '&#10084;'  if life >= 4
+    @life_unicode_status = '&#128148;' if life < 4 && life != 0
+    @life_unicode_status = '&#9760;'   if life <= 0
+    puts 'Your pet has died' if life <= 0
+    exit if life <= 0
   end
 
   def info_html
