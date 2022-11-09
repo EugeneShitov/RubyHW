@@ -21,5 +21,8 @@ DEPENDENCIES
   lunox (~> 1.0.0)
   sanitize (~> 4.0, >= 4.0.1)
 
+RUBY VERSION
+   ruby 3.1.2p20
+
 BUNDLED WITH
    2.3.25
