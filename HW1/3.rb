@@ -1,4 +1,4 @@
 p array = [15, 0, 12, 2, 17, 3, 0, -18]
 p 'Дан целочисленный массив. Вывести номер первого из тех его элементов, которые удовлетворяют двойному неравенству: A[0] < A[i] < A[-1]. Если таких элементов нет, то вывести [ ].'
-p "array.index { |i| array[0] < i && i < array[-1] } || '[ ]'"
-p array.index { |i| array[0] < i && i < array[-1] } || '[ ]'
+p "array.index { |index| array[0] < index && index < array[-1] } || '[ ]'"
+p array.index { |index| array[0] < index && index < array[-1] } || '[ ]'
