@@ -1,5 +1,7 @@
-require './app/application.rb'
+# frozen_string_literal: true
+
+require './app/application'
 
 use Rack::Reloader, 0
 
-run Pet.new
+run Tamagotchi::Application.new
