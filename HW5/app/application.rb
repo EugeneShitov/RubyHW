@@ -9,10 +9,10 @@ module Tamagotchi
     def call(env)
       request = Rack::Request.new(env)
       case request.path
-      when "/" then Rack::Response.new(render("about-game.html.erb")).finish
-      when "/sign-up" then Rack::Response.new(render("sign-up.html.erb")).finish
-      when "/sign-in" then Rack::Response.new(render("sign-in.html.erb")).finish
-      else Rack::Response.new("Not Found", 404).finish
+      when '/' then Rack::Response.new(render('sign-in.html.erb')).finish
+      when '/about' then Rack::Response.new(render('about-game.html.erb')).finish
+      when '/play' then Rack::Response.new(render('tamagotchi.html.erb')).finish
+      else Rack::Response.new(render('errors/error_404.html.erb')).finish
       end
     end
 
