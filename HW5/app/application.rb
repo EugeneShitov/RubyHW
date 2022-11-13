@@ -58,7 +58,9 @@ class Application
       pet.suicide
       rack_response('tamagotchi.html.erb')
     when '/end-game'
-      rack_response('end-game.html.erb')
+      pet.suicide
+    else
+      rack_response('./errors/error_404.html.erb')
     end
   end
 
