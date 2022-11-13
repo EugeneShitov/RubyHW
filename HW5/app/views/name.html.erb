@@ -14,13 +14,17 @@
         <h1 class="fw-bold mb-0 text-warning">Give a name </h1>
       </div>
       <div class="modal-body p-5 pt-0">
-        <form action="/about">
+        <% if pet.name.nil? %>
+        <form action="/create-pet">
           <div class="form-floating mb-3">
             <input name="name" type="text" class="form-control rounded-3" id="name" placeholder="name">
             <label for="name">Name</label>
           </div>
           <button class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-warning" type="submit">Confirm</button>
         </form>
+          <% else %>
+          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-warning" type="submit">Confirm</button>
+          <% end %>
       </div>
     </div>
   </div>

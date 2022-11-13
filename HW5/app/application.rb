@@ -20,8 +20,18 @@ class Application
     case path
     when '/'
       rack_response('sign-in.html.erb')
+    when '/get-name'
+      rack_response('name.html.erb')
+    when '/create-pet'
+      name = request.params['name']
+      rack_response_redirect if name.nil? || name.length.zero?
+
+      @pet = Pet.new(name)
+      rack_response_redirect('/about')
     when '/about'
-      return rack_response_redirect('about-game.html.erb')
+      rack_response_redirect if @pet.nil?
+
+      rack_response('about-game.html.erb')
     end
   end
 
