@@ -7,23 +7,23 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body>
-<div class="modal modal-signin d-block py-5" tabindex="-1" role="dialog" id="modalSignin">
+<div class="modal modal-signin d-block py-5" tabindex="-1" style="background-color: #181A1B !important" role="dialog" id="modalSignin">
   <div class="modal-dialog" role="document">
     <div class="modal-content bg-dark rounded-4 shadow">
       <div class="modal-header p-5 pb-4 border-bottom-0">
-        <h1 class="fw-bold mb-0 text-warning">Give a name </h1>
+        <% if pet.nil? %>
       </div>
       <div class="modal-body p-5 pt-0">
-        <% if pet.name.nil? %>
         <form action="/create-pet">
           <div class="form-floating mb-3">
             <input name="name" type="text" class="form-control rounded-3" id="name" placeholder="name">
             <label for="name">Name</label>
           </div>
-          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-warning" type="submit">Confirm</button>
+          <button onclick="window.location.href = '/about'" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-warning" type="submit">Confirm</button>
         </form>
           <% else %>
-          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-warning" type="submit">Confirm</button>
+          <h1 class="fw-bold mb-0 text-warning">You already have a pet!</h1>
+          <button onclick="window.location.href = '/about'" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-warning" type="submit">LET'S PLAY</button>
           <% end %>
       </div>
     </div>

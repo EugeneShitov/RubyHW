@@ -2,7 +2,10 @@
 
 class Pet
   attr_accessor :name
-  attr_reader :life
+  attr_reader :life,
+              :power,
+              :hunger,
+              :energy
 
   def initialize(name)
     @name   = name
