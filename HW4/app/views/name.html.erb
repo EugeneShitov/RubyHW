@@ -10,9 +10,8 @@
 <div class="modal modal-signin d-block py-5" tabindex="-1" style="background-color: #181A1B !important" role="dialog" id="modalSignin">
   <div class="modal-dialog" role="document">
     <div class="modal-content bg-dark rounded-4 shadow">
-      <div class="modal-header p-5 pb-4 border-bottom-0">
-        <% if pet.nil? %>
-      </div>
+      <div class="modal-header p-5 pb-4 border-bottom-0"></div>
+      <% if pet.nil? %>
       <div class="modal-body p-5 pt-0">
         <form action="/create-pet">
           <div class="form-floating mb-3">
@@ -21,10 +20,10 @@
           </div>
           <button onclick="window.location.href = '/about'" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-warning" type="submit">Confirm</button>
         </form>
-          <% else %>
-          <h1 class="fw-bold mb-0 text-warning">You already have a pet!</h1>
-          <button onclick="window.location.href = '/about'" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-warning" type="submit">LET'S PLAY</button>
-          <% end %>
+      <% else %>
+        <h1 class="fw-bold mb-0 text-warning">You already have a pet!</h1>
+        <button onclick="window.location.href = '/about'" class="w-100 mb-2 btn btn-lg rounded-3 btn-outline-warning" type="submit">LET'S PLAY</button>
+      <% end %>
       </div>
     </div>
   </div>

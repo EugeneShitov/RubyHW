@@ -6,8 +6,7 @@ require_relative './models/pet'
 # Application for tamagotchi
 class Application
   attr_accessor :pet
-  attr_reader   :request,
-                :path
+  attr_reader   :request, :path
 
   def call(env)
     @request = Rack::Request.new(env)
@@ -24,37 +23,46 @@ class Application
       rack_response('name.html.erb')
     when '/create-pet'
       name = request.params['name']
-      rack_response_redirect if name.nil? || name.length.zero?
+      return rack_response_redirect('/get-name') if name.nil? || name.length.zero?
+
       @pet = Pet.new(name)
       rack_response_redirect('/about')
     when '/about'
-      rack_response_redirect if @pet.nil?
+      return rack_response_redirect if @pet.nil?
+
       rack_response('about-game.html.erb')
     when '/play'
-      rack_response_redirect if @pet.nil?
+      return rack_response_redirect if @pet.nil?
+
       rack_response('tamagotchi.html.erb')
     when '/hunting'
-      rack_response_redirect if @pet.nil?
+      return rack_response_redirect if @pet.nil?
+
       pet.hunting
       rack_response('tamagotchi.html.erb')
     when '/deadlifts'
-      rack_response_redirect if @pet.nil?
+      return rack_response_redirect if @pet.nil?
+
       pet.deadlifts
       rack_response('tamagotchi.html.erb')
     when '/play-laser'
-      rack_response_redirect if @pet.nil?
+      return rack_response_redirect if @pet.nil?
+
       pet.play_laser
       rack_response('tamagotchi.html.erb')
     when '/go-sleep'
-      rack_response_redirect if @pet.nil?
+      return rack_response_redirect if @pet.nil?
+
       pet.go_sleep
       rack_response('tamagotchi.html.erb')
     when '/jump-window'
-      rack_response_redirect if @pet.nil?
+      return rack_response_redirect if @pet.nil?
+
       pet.jump_window
       rack_response('tamagotchi.html.erb')
     when '/suicide'
-      rack_response_redirect if @pet.nil?
+      return rack_response_redirect if @pet.nil?
+
       pet.suicide
       rack_response('tamagotchi.html.erb')
     when '/end-game'

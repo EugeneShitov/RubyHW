@@ -1,13 +1,10 @@
 # frozen_string_literal: true
-require_relative '../application'
 
+require_relative '../application'
 
 class Pet
   attr_accessor :name
-  attr_reader :life,
-              :power,
-              :hunger,
-              :energy
+  attr_reader :life, :power, :hunger, :energy
 
   def initialize(name)
     @name   = name
@@ -55,12 +52,13 @@ class Pet
   end
 
   private
-
-  def check
-    @life -= 1 if @energy.negative? || @hunger.negative? || @hunger > 10
-    @hunger = 0 if @hunger > 10
-    @hunger = 10 if @hunger.negative?
-    @energy = 10 if @energy.negative?
-    rack_response('end-game.html.erb') if @power == 20
-  end
+    def check
+      @life  -= 1 if @energy.negative?
+      @life  -= 1 if @hunger.negative?
+      @life  -= 1 if @hunger > 10
+      @hunger = 0 if @hunger > 10
+      @hunger = 10 if @hunger.negative?
+      @energy = 10 if @energy.negative?
+      rack_response('end-game.html.erb') if @power == 20
+    end
 end

@@ -16,7 +16,7 @@ _I hope you have completed those three steps, now let's move on to the other thr
 2. 'rackup'
 3.  [Click](http://[::1]:9292) 
 
-* Login: `user@per.rb`
+* Login: `user@pet.rb`
 * Password: `tamagotchi`
 ___
 * When life is 0 - you die.
